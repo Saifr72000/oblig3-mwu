@@ -1,19 +1,33 @@
 import Link from "next/link";
-import Image from "next/image";
 import type { Film } from "@/lib/types";
+import { getFilmPoster } from "@/lib/images";
 
 export default function FilmCard({ film }: { film: Film }) {
+  const posterSrc = getFilmPoster(film.id, film.image);
+
   return (
     <Link href={`/film/${film.id}`} className="film-card">
-      <div style={{ position: "relative", width: "100%", height: "450px" }}>
-        <Image
-          src={film.image}
+      <div
+        style={{
+          position: "relative",
+          width: "100%",
+          height: "450px",
+          overflow: "hidden",
+        }}
+      >
+        <img
+          src={posterSrc}
           alt={film.title}
-          fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          style={{ objectFit: "cover" }}
+          width="400"
+          height="450"
           loading="lazy"
-          quality={60}
+          decoding="async"
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            display: "block",
+          }}
         />
       </div>
       <div className="film-content">

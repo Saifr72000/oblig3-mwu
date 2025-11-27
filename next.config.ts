@@ -4,8 +4,7 @@ const nextConfig: NextConfig = {
   // Enable static export for optimal Netlify performance
   output: "export",
 
-  // Disable image optimization for static export (not supported)
-  // Images will still be optimized at build time but won't use Next.js Image Optimization API
+  // Disable image optimization for static export (using pre-optimized WebP images)
   images: {
     unoptimized: true,
   },
