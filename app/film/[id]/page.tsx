@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import {
   fetchFilms,
@@ -11,6 +10,7 @@ import {
   isValidResourceUrl,
 } from "@/lib/api";
 import type { Person, Species } from "@/lib/types";
+import { getFilmBanner } from "@/lib/images";
 
 // Generate static params for all films at build time
 export async function generateStaticParams() {
@@ -83,6 +83,8 @@ export default async function FilmPage({
     notFound();
   }
 
+  const bannerSrc = getFilmBanner(film.id, film.movie_banner || film.image);
+
   // Fetch all people (characters)
   const validPeopleUrls = film.people.filter(isValidResourceUrl);
   const peoplePromises = validPeopleUrls.map((url) => fetchPerson(url));
@@ -138,16 +140,26 @@ export default async function FilmPage({
           {/* Hero Banner */}
           <div className="detail-hero">
             <div
-              style={{ position: "relative", width: "100%", height: "400px" }}
+              style={{
+                position: "relative",
+                width: "100%",
+                height: "400px",
+                overflow: "hidden",
+              }}
             >
-              <Image
-                src={film.movie_banner || film.image}
+              <img
+                src={bannerSrc}
                 alt={film.title}
-                fill
-                sizes="100vw"
-                style={{ objectFit: "cover" }}
-                priority
-                quality={90}
+                width="1200"
+                height="400"
+                loading="eager"
+                decoding="async"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  display: "block",
+                }}
               />
             </div>
           </div>
