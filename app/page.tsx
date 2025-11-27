@@ -18,27 +18,57 @@ export default async function HomePage() {
       <div className="soot-sprites">
         <div
           className="soot-sprite"
-          style={{ left: "10%", animationDelay: "0s", width: "28px", height: "28px" }}
+          style={{
+            left: "10%",
+            animationDelay: "0s",
+            width: "28px",
+            height: "28px",
+          }}
         ></div>
         <div
           className="soot-sprite"
-          style={{ left: "25%", animationDelay: "2s", width: "32px", height: "32px" }}
+          style={{
+            left: "25%",
+            animationDelay: "2s",
+            width: "32px",
+            height: "32px",
+          }}
         ></div>
         <div
           className="soot-sprite"
-          style={{ left: "45%", animationDelay: "4s", width: "26px", height: "26px" }}
+          style={{
+            left: "45%",
+            animationDelay: "4s",
+            width: "26px",
+            height: "26px",
+          }}
         ></div>
         <div
           className="soot-sprite"
-          style={{ left: "65%", animationDelay: "1s", width: "30px", height: "30px" }}
+          style={{
+            left: "65%",
+            animationDelay: "1s",
+            width: "30px",
+            height: "30px",
+          }}
         ></div>
         <div
           className="soot-sprite"
-          style={{ left: "80%", animationDelay: "3s", width: "34px", height: "34px" }}
+          style={{
+            left: "80%",
+            animationDelay: "3s",
+            width: "34px",
+            height: "34px",
+          }}
         ></div>
         <div
           className="soot-sprite"
-          style={{ left: "90%", animationDelay: "5s", width: "27px", height: "27px" }}
+          style={{
+            left: "90%",
+            animationDelay: "5s",
+            width: "27px",
+            height: "27px",
+          }}
         ></div>
       </div>
 
@@ -51,14 +81,38 @@ export default async function HomePage() {
 
       {/* Leaves - pure CSS, no JS needed */}
       <div className="leaves">
-        <div className="leaf" style={{ left: "10%", animationDelay: "0s" }}></div>
-        <div className="leaf" style={{ left: "20%", animationDelay: "2s" }}></div>
-        <div className="leaf" style={{ left: "35%", animationDelay: "4s" }}></div>
-        <div className="leaf" style={{ left: "50%", animationDelay: "1s" }}></div>
-        <div className="leaf" style={{ left: "65%", animationDelay: "5s" }}></div>
-        <div className="leaf" style={{ left: "70%", animationDelay: "3s" }}></div>
-        <div className="leaf" style={{ left: "85%", animationDelay: "6s" }}></div>
-        <div className="leaf" style={{ left: "95%", animationDelay: "7s" }}></div>
+        <div
+          className="leaf"
+          style={{ left: "10%", animationDelay: "0s" }}
+        ></div>
+        <div
+          className="leaf"
+          style={{ left: "20%", animationDelay: "2s" }}
+        ></div>
+        <div
+          className="leaf"
+          style={{ left: "35%", animationDelay: "4s" }}
+        ></div>
+        <div
+          className="leaf"
+          style={{ left: "50%", animationDelay: "1s" }}
+        ></div>
+        <div
+          className="leaf"
+          style={{ left: "65%", animationDelay: "5s" }}
+        ></div>
+        <div
+          className="leaf"
+          style={{ left: "70%", animationDelay: "3s" }}
+        ></div>
+        <div
+          className="leaf"
+          style={{ left: "85%", animationDelay: "6s" }}
+        ></div>
+        <div
+          className="leaf"
+          style={{ left: "95%", animationDelay: "7s" }}
+        ></div>
       </div>
 
       <header>

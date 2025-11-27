@@ -19,6 +19,32 @@ const nextConfig: NextConfig = {
 
   // Trailing slash for better CDN caching
   trailingSlash: true,
+
+  // CO2 OPTIMIZATION: Replace React with Preact (saves ~40 KB)
+  webpack: (config, { dev, isServer }) => {
+    if (!dev && !isServer) {
+      // Alias React to Preact in production client bundles
+      Object.assign(config.resolve.alias, {
+        "react/jsx-runtime": "preact/jsx-runtime",
+        "react-dom/test-utils": "preact/test-utils",
+        "react-dom": "preact/compat",
+        react: "preact/compat",
+      });
+    }
+    return config;
+  },
+
+  // Add empty turbopack config to silence Next.js 16 warning
+  turbopack: {},
+
+  // Additional optimizations
+  experimental: {
+    optimizePackageImports: ["preact"],
+  },
+
+  compiler: {
+    removeConsole: process.env.NODE_ENV === "production",
+  },
 };
 
 export default nextConfig;
