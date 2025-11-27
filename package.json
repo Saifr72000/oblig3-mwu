@@ -4,14 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build --webpack && next-image-export-optimizer --nextConfigPath next.config.ts",
+    "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint",
     "download-images": "node scripts/download-images.js"
   },
   "dependencies": {
     "next": "16.0.1",
-    "next-image-export-optimizer": "^1.19.0",
     "preact": "^10.27.2",
     "preact-render-to-string": "^6.6.3",
     "react": "19.2.0",
